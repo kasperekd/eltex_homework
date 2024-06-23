@@ -5,7 +5,7 @@ int main(){
     printf("\nEnter a positive integer\n> ");
 
     int in = 0;
-    int try = 0;
+    int try_count = 0;
     int c = 0;
 
     while (1){
@@ -13,20 +13,19 @@ int main(){
             break;
         }
         
-        try++;
+        try_count++;
 
-        if (try < 3){
+        if (try_count < 3){
             printf("\nInvalid number entered, try again\n> ");
             while ((c = getchar()) != '\n' && c != EOF);
             continue;
-        }
-        else{
+        }else{
             printf("\nToo many failed input attempts\n");
             exit(1);
         }
     }
     
-    int int_size = sizeof(int) * 8;
+    int int_size = sizeof(in) * 8;
     
     char buf[int_size + 1];
     buf[int_size] = '\0';
@@ -37,5 +36,5 @@ int main(){
     
     printf("\nBinary representation of a positive integer: %s\n", buf);
 
-    return 1;
+    return 0;
 }
