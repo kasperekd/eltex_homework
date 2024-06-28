@@ -1,15 +1,16 @@
 #include <stdio.h>
 
-int main(){
-    int array[10] = {0};
-    int *ptrA = array;
+#define SIZE 10
 
-    for (int i = 0; i < 10; i++){
-        *(ptrA + i) = i;
+int main(){
+    int array[SIZE] = {0};
+
+    for (int i = 0; i < SIZE; i++){
+        *(array + i) = i;
     }
     
-    for (int i = 0; i < 10; i++){
-        printf("%d", *(ptrA + i));
+    for (int i = 0; i < SIZE; i++){
+        printf("%d", *array + i);
     }
     printf("\n");
 
