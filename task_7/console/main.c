@@ -3,6 +3,9 @@
 #include <limits.h>
 #include "calc.h"
 
+#define TRUE 1
+#define FALSE 0
+
 void clearIBuf() {
     while (getchar() != '\n');
 }
@@ -51,27 +54,27 @@ int main() {
         b = getIntInput("Enter the second number: ");
 
         errno = 0;
-        int success = 0;
+        int success = FALSE;
 
         switch (choice) {
             case 1:
                 result = add(a, b);
-                success = 1;
+                success = TRUE;
                 break;
             case 2:
                 result = sub(a, b);
-                success = 1;
+                success = TRUE;
                 break;
             case 3:
                 result = mul(a, b);
-                success = 1;
+                success = TRUE;
                 break;
             case 4:
                 result = div(a, b);
                 if (errno == EDOM) {
                     printf("Error: division by zero!\n");
                 } else {
-                    success = 1;
+                    success = TRUE;
                 }
                 break;
             default:
