@@ -115,15 +115,15 @@ int main() {
             case '\n':
                 change_directory(panels[current_panel]);
                 break;
-            case 't':
-                init_text_panel(
-                    &text_panels[0], TP_ERROR, "TEST TEXT_PANEL\0",
-                    "THIS IS A SOME TEXT On new panel\n THIS IS A NEW LINE\0",
-                    LINES / 2 - 10, COLS / 2 - 10, 10, 20);
-                break;
-            case 'y':
-                deinit_text_panel(&text_panels[0]);
-                break;
+            // case 't':
+            //     init_text_panel(
+            //         &text_panels[0], TP_ERROR, "TEST TEXT_PANEL\0",
+            //         "THIS IS A SOME TEXT On new panel\n THIS IS A NEW
+            //         LINE\0", LINES / 2 - 10, COLS / 2 - 10, 10, 20);
+            //     break;
+            // case 'y':
+            //     deinit_text_panel(&text_panels[0]);
+            //     break;
             case KEY_RESIZE:
                 resize_panels(panels, &MAX_LENGTH, &num_panels);
                 // resize_text_panels(text_panels, &num_text_panels, old_cols,
