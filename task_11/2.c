@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define N 2
+#define N 10
 #define END 100000000
 
 int counter;
