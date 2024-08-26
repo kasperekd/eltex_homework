@@ -6,7 +6,8 @@ BUILDDIR = build
 SRCS := $(wildcard $(SRCDIR)/*.c)
 BINS := $(patsubst $(SRCDIR)/%.c,$(BUILDDIR)/%,$(SRCS))
 
-all: $(BINS)
+all: $(BINS) 
+	$(MAKE) -C 3
 
 $(BUILDDIR)/%: $(SRCDIR)/%.c | $(BUILDDIR)
 	$(CC) $(CFLAGS) $< -o $@
