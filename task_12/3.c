@@ -87,7 +87,7 @@ int main(int argc, char *argv[]) {
             } else if (pid1 == 0) {
                 // Дочерний процесс 1
                 dup2(pipefd[1], STDOUT_FILENO);  // Перенаправляем stdout в пайп
-                close(pipefd[0]);  // Закрываем неиспользуемый конец
+                close(pipefd[0]);  // Закрываем неиспользуемый
                 close(pipefd[1]);
                 execvp(args[0], args);
                 perror("exec failed");
@@ -102,7 +102,7 @@ int main(int argc, char *argv[]) {
             } else if (pid2 == 0) {
                 // Дочерний процесс 2
                 dup2(pipefd[0], STDIN_FILENO);  // Перенаправляем stdin из пайпа
-                close(pipefd[1]);  // Закрываем неиспользуемый конец
+                close(pipefd[1]);  // Закрываем неиспользуемый
                 close(pipefd[0]);
 
                 // Токенизация второй команды
